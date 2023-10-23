@@ -54,7 +54,7 @@ export type RelevanceEdgeData = RelevanceEdgePersisted & RelevanceEdgeCalculated
 export type ConfidenceEdgePersisted = {
     pol: string,
     claimEdge: ClaimEdge,
-    sourceScore: Score
+    sourceScore: Score,
     type: "confidence",
 }
 
@@ -98,7 +98,7 @@ export type ConfidenceEdgeCalculated = {
 export type RelevanceEdgePersisted = {
     pol: string,
     claimEdge: ClaimEdge,
-    sourceScore: Score
+    sourceScore: Score,
     type: "relevance",
 }
 
@@ -141,8 +141,8 @@ export type Stacked = {
  * @property {DispatchType<boolean>} setDevMode - A dispatcher function to toggle the development mode on or off.
  */
 export type DevContextState = {
-    isDev: boolean;
-    setDevMode: DispatchType<boolean>;
+    isDev: boolean,
+    setDevMode: DispatchType<boolean>,
 };
 
 /**
