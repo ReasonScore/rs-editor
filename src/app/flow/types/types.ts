@@ -32,13 +32,13 @@ export type DisplayNodePersisted = {
  * @property {Score} score - The score object containing metrics about the claim's confidence and relevance within the debate.
  * @property {string} scoreNumberText - The textual representation of the score number, formatted for display.
  * @property {number} scoreNumber - The numerical value of the score, calculated from the score's metrics.
- * @property {Stacked | undefined} cancelOutStacked - (Optional) The visual stacking space representation for layout calculations.
+ * @property {Stacked } cancelOutStacked - The visual stacking space representation for layout calculations.
  */
 export type DisplayNodeCalculated = {
     score: Score,
     scoreNumberText: string,
     scoreNumber: number,
-    cancelOutStacked?: Stacked
+    cancelOutStacked: Stacked
 }
 
 export type DisplayEdgeData = ConfidenceEdgeData | RelevanceEdgeData
@@ -57,8 +57,8 @@ export type RelevanceEdgeData = {
  *
  * @typedef {Object} ConfidenceEdgePersisted
  * @property {string} pol - The polarity indicating whether the edge is supporting (pro) or opposing (con) the claim.
- * @property {ClaimEdge | undefined} claimEdge - The claim edge object representing the relationship between claims.
- * @property {Score | undefined} sourceScore - The source score object associated with the confidence edge.
+ * @property {ClaimEdge } claimEdge - The claim edge object representing the relationship between claims.
+ * @property {Score } sourceScore - The source score object associated with the confidence edge.
  * @property {"confidence"} type - The type of the edge data, indicating it's a confidence edge.
  */
 export type ConfidenceEdgePersisted = {
@@ -166,7 +166,7 @@ export type DevContextState = {
 * @property {OnChange<NodeChange>} onNodesChange - A handler function to be invoked when there is a change in nodes.
 * @property {OnChange<EdgeChange>} onEdgesChange - A handler function to be invoked when there is a change in edges.
 * @property {DebateData} debateData - The debate data associated with this flow.
-* @property {Node<DisplayNodeData, string | undefined>[]} displayNodes - An array of display node data objects.
+* @property {Node<DisplayNodeDatad>[]} displayNodes - An array of display node data objects.
 * @property {Edge<DisplayEdgeData>[]} displayEdges - An array of display edge data objects.
 */
 export type FlowDataState = {
