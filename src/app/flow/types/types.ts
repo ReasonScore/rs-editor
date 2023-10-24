@@ -8,7 +8,10 @@ import { ActionTypes } from '@/reasonScoreNext/ActionTypes';
 import { EdgeChange, NodeChange } from 'reactflow';
 import { DebateData } from '@/reasonScoreNext/DebateData';
 
-export type DisplayNodeData = DisplayNodePersisted & DisplayNodeCalculated
+export type DisplayNodeData = {
+    persisted: DisplayNodePersisted,
+    calculate: DisplayNodeCalculated
+}
 
 /**
  * DisplayNodePersisted - Flow Data: Persisted
@@ -39,8 +42,15 @@ export type DisplayNodeCalculated = {
 }
 
 export type DisplayEdgeData = ConfidenceEdgeData | RelevanceEdgeData
-export type ConfidenceEdgeData = ConfidenceEdgePersisted & ConfidenceEdgeCalculated
-export type RelevanceEdgeData = RelevanceEdgePersisted & RelevanceEdgeCalculated
+
+export type ConfidenceEdgeData = {
+    persisted: ConfidenceEdgePersisted,
+    calculated: ConfidenceEdgeCalculated
+}
+export type RelevanceEdgeData = {
+    persisted: RelevanceEdgePersisted,
+    calculated: RelevanceEdgeCalculated
+}
 
 /**
  * ConfidenceEdgePersisted - Flow Data: Persisted
